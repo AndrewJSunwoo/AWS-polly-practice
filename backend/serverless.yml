@@ -1,0 +1,16 @@
+service: speaking-app-backend
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+  role: arn:aws:iam::348146181585:role/speaking-app-role
+
+functions:
+  speak:
+    handler: handler.speak
+    events:
+      - http:
+          path: speak
+          method: post
+          cors: true

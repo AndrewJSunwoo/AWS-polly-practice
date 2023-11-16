@@ -1,0 +1,23 @@
+<div style="margin: auto; padding: 10px; text-align: center">
+  <h2>Talking App</h2>
+  <div>
+    <textarea
+      #userInput
+      style="font-size: 15px; padding: 10px"
+      cols="60"
+      rows="10"
+    ></textarea>
+  </div>
+  <div>
+    <select [(ngModel)]="selectedVoice">
+      <option *ngFor="let voice of voices" [ngValue]="voice">
+        {{ voice }}
+      </option>
+    </select>
+    <div>
+      <button style="font-size: 15px" (click)="speakNow(userInput.value)">
+        Speak Now
+      </button>
+    </div>
+  </div>
+</div>
